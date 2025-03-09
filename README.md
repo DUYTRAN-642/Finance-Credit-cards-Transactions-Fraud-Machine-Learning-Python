@@ -111,3 +111,8 @@ An accuracy of 99% sounds excellent at first glance—it means the model is corr
 The F1 score is given as 0.91, which is the harmonic mean of precision and recall, confirming the metrics are consistent and indicates the model performs well on the positive class despite the imbalance
 
 ==> This model 's performance  is quite good overall, with a strong F1 score indicating robustness despite imbalance
+
+# Reference sources
+
+* Dataset source: https://docs.google.com/spreadsheets/d/1FWOI4uY2_4xVn0YQnWEdevdbenxucmMs_BSGnoP-s0s/edit?gid=1430542985#gid=1430542985
+* Colab notebook: https://colab.research.google.com/drive/1K8kAKJmPaOubSaCstZA_j7dWgNX1T4FL
