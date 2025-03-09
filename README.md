@@ -1,5 +1,5 @@
 # Python-ML-Financial-Fraud
-Credit Card Fraud Detection Project   
+**Credit Card Fraud Detection Project**   
 ![image](https://github.com/user-attachments/assets/12a71339-0a64-46ac-a116-10a681827bad)
 
 ## Overview
