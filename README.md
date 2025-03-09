@@ -1,5 +1,6 @@
 # Python-ML-Financial-Fraud
-Credit Card Fraud Detection Project
+Credit Card Fraud Detection Project   ![image](https://github.com/user-attachments/assets/12a71339-0a64-46ac-a116-10a681827bad)
+
 ## Overview
 
 This project uses a dataset of credit card transactions to build a basic Machine Learning model for predicting credit card fraud. The dataset includes transaction details, cardholder information, and a label indicating whether each transaction is fraudulent or not. The goal is to train a model that can accurately classify transactions as fraudulent (1) or non-fraudulent (0).
