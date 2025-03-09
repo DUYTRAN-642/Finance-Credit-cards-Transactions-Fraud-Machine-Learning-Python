@@ -34,14 +34,14 @@ The dataset contains the following features:
 | merch_long            | Longitude of the merchant's location.                            |
 | is_fraud              | Target variable indicating if the transaction is fraudulent (1) or not (0). |
 
-##The primary objective of this project is to:
+## The primary objective of this project is to:
 
 * Perform exploratory data analysis (EDA) on the credit card transaction dataset.
 * Preprocess the data (e.g., handle missing values, encode categorical variables, etc.).
 * Build and train a basic Machine Learning model to predict whether a transaction is fraudulent.
 * Evaluate the model's performance using appropriate metrics (e.g., accuracy, precision, recall).
 
-# Tools and Technologies
+## Tools and Technologies
 
 * Programming Language: Python
 * Libraries: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn (or others as used in your Colab notebook)
