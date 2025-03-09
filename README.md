@@ -44,7 +44,70 @@ The dataset contains the following features:
 ## Tools and Technologies
 
 * Programming Language: Python
-* Libraries: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn (or others as used in your Colab notebook)
+* Libraries: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn and others
 * Environment: Google Colab
 
+## Preprocessing
 
+Data overview, Check missing values, outlier detection and EDA using syntax 
+```
+df.info()
+df.describe()
+```
+
+## Feature Engineering
+
+* Create new features by transforming to "trans_time"; "year_of_birth" to fit the format running model
+```
+df["trans_time"] = pd.to_datetime(df['trans_date_trans_time']).dt.hour
+df["year_of_birth"] = pd.to_datetime(df['dob']).dt.year
+```
+![image](https://github.com/user-attachments/assets/4aaf5a47-cf1f-424c-8a2f-8a2c8b6fbaf3)
+
+* Endcode features "category" and "gender", encode states in US by group them into 4 regions and 'get_dummies', select top 20 jobs have highest fraud cases, encode top 20 jobs with highest fraud cases and the rest as 'others'
+```
+list_columns = ['category','gender']
+df = pd.get_dummies(df, columns=list_columns,drop_first=True,dtype=int)
+state_to_region = {
+    'Northeast': ['CT', 'ME', 'MA', 'NH', 'RI', 'VT', 'NJ', 'NY', 'PA'],
+    'Midwest': ['IL', 'IN', 'MI', 'OH', 'WI', 'IA', 'KS', 'MN', 'MO', 'NE', 'ND', 'SD'],
+    'South': ['DE', 'FL', 'GA', 'MD', 'NC', 'SC', 'VA', 'WV', 'AL', 'KY', 'MS', 'TN', 'AR', 'LA', 'OK', 'TX'],
+    'West': ['AZ', 'CO', 'ID', 'MT', 'NV', 'NM', 'UT', 'WY', 'AK', 'CA', 'HI', 'OR', 'WA']
+}
+region_to_state = {state: region for region, states in state_to_region.items() for state in states}
+
+# Map state codes to regions
+df['region']=df['state'].map(region_to_state)
+
+# Create dummy variables for regions
+dummies = pd.get_dummies(df['region'], drop_first=False).astype(int)
+
+df = pd.concat([df, dummies], axis=1)
+```
+## Model Traning
+```
+# Select features and Split dataset
+drop_features = ['Unnamed: 0.1','Unnamed: 0','trans_date_trans_time','cc_num','merchant','first','last','street','city','state','job','region','dob','trans_num','encoded_job_title','is_fraud']
+X = df.drop(columns = drop_features)
+y = df['is_fraud']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+#Select model RandomForest
+model = RandomForestClassifier(random_state=42)
+model.fit(X_train, y_train)
+y_pred = model.predict(X_test)
+```
+Random Forest is a smart choice for credit card fraud prediction because it balances robustness, flexibility, and performance, especially for imbalanced, noisy data, especially, Random Forest does not inherently require feature scaling (e.g., normalization or standardization)
+
+## Model Evaluation
+```
+[[27050    55]
+ [  315  1905]]
+Accuracy: 0.99
+F1 Score: 0.91
+```
+An accuracy of 99% sounds excellent at first glance—it means the model is correct 99% of the time. However, accuracy alone can be misleading, especially if the dataset is imbalanced (which seems to be the case here, as there are far more negatives (27,105) than positives (2,220))
+
+The F1 score is given as 0.91, which is the harmonic mean of precision and recall, confirming the metrics are consistent and indicates the model performs well on the positive class despite the imbalance
+
+==> This model 's performance  is quite good overall, with a strong F1 score indicating robustness despite imbalance
