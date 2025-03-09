@@ -8,29 +8,31 @@ You can explore the implementation of this project in the provided Google Colab 
 Dataset Information
 The dataset contains the following features:
 
-trans_date_trans_time: Date and time of the transaction.
-cc_num: Credit card number.
-merchant: Name of the merchant receiving the payment.
-category: The merchant's area of business (e.g., retail, dining, etc.).
-amt: Transaction amount in USD.
-first: First name of the cardholder.
-last: Last name of the cardholder.
-gender: Gender of the cardholder (Male or Female).
-street: Street address of the cardholder's residence.
-city: City of the cardholder's residence.
-state: State of the cardholder's residence.
-zip: ZIP code of the cardholder's residence.
-lat: Latitude of the cardholder's residence.
-long: Longitude of the cardholder's residence.
-city_pop: Population of the cardholder's city.
-job: Occupation or trade of the cardholder.
-dob: Date of birth of the cardholder.
-trans_num: Unique transaction ID.
-unix_time: Unix timestamp of the transaction (seconds since Jan 1, 1970).
-merch_lat: Latitude of the merchant's location.
-merch_long: Longitude of the merchant's location.
-is_fraud: Target variable indicating if the transaction is fraudulent (1) or not (0).
-Project Objective
+| Field Name            | Description                                                      |
+|-----------------------|------------------------------------------------------------------|
+| trans_date_trans_time | Date and time of the transaction.                                |
+| cc_num                | Credit card number.                                              |
+| merchant              | Name of the merchant receiving the payment.                      |
+| category              | The merchant's area of business (e.g., retail, dining, etc.).    |
+| amt                   | Transaction amount in USD.                                       |
+| first                 | First name of the cardholder.                                    |
+| last                  | Last name of the cardholder.                                     |
+| gender                | Gender of the cardholder (Male or Female).                       |
+| street                | Street address of the cardholder's residence.                    |
+| city                  | City of the cardholder's residence.                              |
+| state                 | State of the cardholder's residence.                             |
+| zip                   | ZIP code of the cardholder's residence.                          |
+| lat                   | Latitude of the cardholder's residence.                          |
+| long                  | Longitude of the cardholder's residence.                         |
+| city_pop              | Population of the cardholder's city.                             |
+| job                   | Occupation or trade of the cardholder.                           |
+| dob                   | Date of birth of the cardholder.                                 |
+| trans_num             | Unique transaction ID.                                           |
+| unix_time             | Unix timestamp of the transaction (seconds since Jan 1, 1970).   |
+| merch_lat             | Latitude of the merchant's location.                             |
+| merch_long            | Longitude of the merchant's location.                            |
+| is_fraud              | Target variable indicating if the transaction is fraudulent (1) or not (0). |
+
 The primary objective of this project is to:
 
 Perform exploratory data analysis (EDA) on the credit card transaction dataset.
