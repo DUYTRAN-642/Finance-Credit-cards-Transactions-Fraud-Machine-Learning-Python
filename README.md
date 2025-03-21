@@ -7,7 +7,7 @@ Author: DUY TRAN
 Date: 2025-03-21
 Tools Used: Python
 
-# 📑 Table of Contents
+## 📑 Table of Contents
 
 📌 Background & Overview
 
@@ -15,7 +15,7 @@ Tools Used: Python
 
 🔎 Final Conclusion & Recommendations
 
-## Overview
+## 📌 Background & Overview
 
 This project uses a dataset of credit card transactions to build a basic Machine Learning model for predicting credit card fraud. The dataset includes transaction details, cardholder information, and a label indicating whether each transaction is fraudulent or not. The goal is to train a model that can accurately classify transactions as fraudulent (1) or non-fraudulent (0).
 
