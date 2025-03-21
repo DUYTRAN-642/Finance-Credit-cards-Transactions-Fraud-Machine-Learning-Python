@@ -1,15 +1,18 @@
 # Python-ML-Financial-Fraud
 ![image](https://github.com/user-attachments/assets/12a71339-0a64-46ac-a116-10a681827bad)
 
-#📊 Project Title: Credit Card Fraud Detection Project# 
+# 📊 Project Title: Credit Card Fraud Detection Project
 
 Author: DUY TRAN
 Date: 2025-03-21
 Tools Used: Python
 
-**📑 Table of Contents**
+# 📑 Table of Contents
+
 📌 Background & Overview
+
 📂 Dataset Description & Data Structure
+
 🔎 Final Conclusion & Recommendations
 
 ## Overview
