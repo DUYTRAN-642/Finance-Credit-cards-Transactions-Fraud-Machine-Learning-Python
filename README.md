@@ -115,10 +115,12 @@ df.describe()
 ## 2️⃣ Feature Engineering
 
 * Create new features by transforming to "trans_time"; "year_of_birth" to fit the format of running model
+
 ```
 df["trans_time"] = pd.to_datetime(df['trans_date_trans_time']).dt.hour
 df["year_of_birth"] = pd.to_datetime(df['dob']).dt.year
 ```
+
 ![image](https://github.com/user-attachments/assets/4aaf5a47-cf1f-424c-8a2f-8a2c8b6fbaf3)
 
 * Endcode features "category" and "gender", encode states in US by group them into 4 regions and 'get_dummies', select top 20 jobs have highest fraud cases, encode top 20 jobs with highest fraud cases and the rest as 'others'
