@@ -94,8 +94,7 @@ Tools Used: Python
 ### 1️⃣ Data Cleaning & Preprocessing
 
 Data overview, Check missing values, outlier detection and EDA using syntax 
-```
-{python}
+```{python}
 df.info()
 df.describe()
 ```
