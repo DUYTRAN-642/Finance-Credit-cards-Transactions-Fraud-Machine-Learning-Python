@@ -92,16 +92,29 @@ Tools Used: Python
 ## ⚒️ Main Process
 
 ### 1️⃣ Data Cleaning & Preprocessing
+* Loading Data
 
-Data overview, Check missing values, outlier detection and EDA using syntax 
-```{python}
+  ```
+  df = pd.read_csv('/content/drive/MyDrive/Colab Notebooks/Bản sao của mini-project2 .csv')
+df.head()
+```
+
+* Data overview, Check missing values, outlier detection and EDA using syntax 
+```
 df.info()
 df.describe()
 ```
 
-## Feature Engineering
+![image](https://github.com/user-attachments/assets/fe2df2c8-9036-4513-a0d2-75febcaaf1bb)
 
-* Create new features by transforming to "trans_time"; "year_of_birth" to fit the format running model
+![image](https://github.com/user-attachments/assets/11aaa2d3-6999-40e4-918a-8dbc0180f5a4)
+
+
+=> The dataset has 24 features, none of them have mising values, there are 3 different data types: Float, Interger and Object
+
+## 2️⃣ Feature Engineering
+
+* Create new features by transforming to "trans_time"; "year_of_birth" to fit the format of running model
 ```
 df["trans_time"] = pd.to_datetime(df['trans_date_trans_time']).dt.hour
 df["year_of_birth"] = pd.to_datetime(df['dob']).dt.year
