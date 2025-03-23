@@ -17,9 +17,16 @@ Tools Used: Python
 
 ## 📌 Background & Overview
 
-This project uses a dataset of credit card transactions to build a basic Machine Learning model for predicting credit card fraud. The dataset includes transaction details, cardholder information, and a label indicating whether each transaction is fraudulent or not. The goal is to train a model that can accurately classify transactions as fraudulent (1) or non-fraudulent (0).
+### 📖 What is this project about? What Business Question will it solve?
 
-You can explore the implementation of this project in the provided Google Colab notebook.
+✔️ This project builds a basic Machine Learning model for predicting credit card fraud. 
+
+✔️ Provide actionable insights for decision making in enhancing finacial security of bank, increasing customer reliability and satisfaction.
+
+### 👤 Who is this project for?
+
+✔️ Data analysts & business analysts
+✔️ Decision-makers & stakeholders
 
 ## Dataset Information
 The dataset contains the following features:
