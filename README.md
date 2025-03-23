@@ -4,7 +4,9 @@
 ## 📊 Project Title: Credit Card Fraud Detection Project
 
 Author: DUY TRAN
+
 Date: 2025-03-21
+
 Tools Used: Python
 
 ## 📑 Table of Contents
@@ -25,11 +27,38 @@ Tools Used: Python
 
 ### 👤 Who is this project for?
 
-✔️ Data analysts & business analysts
-✔️ Decision-makers & stakeholders
+✔️ Data engineers: who are focused on developing, deploying, and maintaining fraud detection systems.
 
-## Dataset Information
-The dataset contains the following features:
+✔️ Risk Management Teams: Individuals or teams focused on assessing and managing financial risk for organization, ensuring that fraudulent activities are minimized.
+
+✔️ Regulatory and Compliance Agencies: Organizations that are responsible for ensuring businesses comply with financial regulations
+
+✔️ Research and Development: Academic or corporate research groups studying fraud detection techniques and machine learning applications in finance
+
+## The primary objective of this project is to:
+
+* Perform exploratory data analysis (EDA) on the credit card transaction dataset
+* Preprocess the data (handle missing values, check duplicates, encode categorical variables).
+* Build and train a basic Machine Learning model to predict whether a transaction is fraudulent.
+* Evaluate the model's performance using appropriate metrics (accuracy, confusaion matrix, F1 Score).
+
+## Tools and Technologies
+
+* Programming Language: Python
+* Libraries: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn and others
+* Environment: Google Colab
+
+## 📂 Dataset Description & Data Structure
+
+### 📌 Data Source
+
+* Source: The dataset was obtained from a cedit card organization in the US
+* Size: There is one table includes more than 97700 equivalent to the same number of recorded transactions with 24 features
+* Format: .csv
+  
+### 📊 Data Structure
+
+* Table Schema
 
 | Field Name            | Description                                                      |
 |-----------------------|------------------------------------------------------------------|
@@ -56,23 +85,17 @@ The dataset contains the following features:
 | merch_long            | Longitude of the merchant's location.                            |
 | is_fraud              | Target variable indicating if the transaction is fraudulent (1) or not (0). |
 
-## The primary objective of this project is to:
+* Data snapshot
 
-* Perform exploratory data analysis (EDA) on the credit card transaction dataset.
-* Preprocess the data (e.g., handle missing values, encode categorical variables, etc.).
-* Build and train a basic Machine Learning model to predict whether a transaction is fraudulent.
-* Evaluate the model's performance using appropriate metrics (e.g., accuracy, precision, recall).
+  ![image](https://github.com/user-attachments/assets/62db8904-b5ae-4bc3-ae75-3df7b2313c38)
 
-## Tools and Technologies
+## ⚒️ Main Process
 
-* Programming Language: Python
-* Libraries: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn and others
-* Environment: Google Colab
-
-## Preprocessing
+### 1️⃣ Data Cleaning & Preprocessing
 
 Data overview, Check missing values, outlier detection and EDA using syntax 
 ```
+{python}
 df.info()
 df.describe()
 ```
