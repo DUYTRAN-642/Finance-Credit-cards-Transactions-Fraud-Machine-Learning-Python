@@ -242,12 +242,15 @@ The F1 score is given as 0.91, which is the harmonic mean of precision and recal
 👉🏻 Based on the insights and findings above, we could have conclusion to stakeholders fro decisiong-making
 
    ✔️ The project successfully developed a machine learning model using RandomForest and demonstrated strong potential in identifying fraudulent transactions, capturing key patterns through the process of feature engineering, model training, and evaluation
+   
    ✔️ The project significantly provided an valuable tool for enhancing the detection system of credit card fraud, enable risk management team to handle large volumes of transactions in real-time.
 
 📌 Key Takeaways:
   
-  ✔️ Continue refining features, such as transaction history or user behavior, and explore domain-specific features to better capture fraud patterns
+  ✔️ Continue refining features, such as transaction history or user behavior, and explore domain-specific features to better capture fraud patterns.
+  
   ✔️ Further fine-tune the RandomForest model by experimenting with hyperparameters. 
+  
   ✔️ explore alternative models like XGBoost to assess if they offer better performance in fraud detection.
 
 
