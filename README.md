@@ -94,12 +94,13 @@ Tools Used: Python
 ### 1️⃣ Data Cleaning & Preprocessing
 * Loading Data
 
-  ```
+```
   df = pd.read_csv('/content/drive/MyDrive/Colab Notebooks/Bản sao của mini-project2 .csv')
-df.head()
+  df.head()
 ```
 
-* Data overview, Check missing values, outlier detection and EDA using syntax 
+* Data overview, Check missing values, outlier detection and EDA using syntax
+
 ```
 df.info()
 df.describe()
