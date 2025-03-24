@@ -124,7 +124,15 @@ df["year_of_birth"] = pd.to_datetime(df['dob']).dt.year
 
 ![image](https://github.com/user-attachments/assets/4aaf5a47-cf1f-424c-8a2f-8a2c8b6fbaf3)
 
-* Endcode features "category" and "gender", encode states in US by group them into 4 regions and 'get_dummies', select top 20 jobs have highest fraud cases, encode top 20 jobs with highest fraud cases and the rest as 'others'
+* Endcode features "category" and "gender"
+  
+```
+  list_columns = ['category','gender']
+df = pd.get_dummies(df, columns=list_columns,drop_first=True,dtype=int)
+```
+
+* Encode states in US by group them into 4 regions  ➡️ 'get_dummies' the regions 'Northeast', 'Midwest', 'South', 'West'
+
 ```
 list_columns = ['category','gender']
 df = pd.get_dummies(df, columns=list_columns,drop_first=True,dtype=int)
@@ -144,6 +152,62 @@ dummies = pd.get_dummies(df['region'], drop_first=False).astype(int)
 
 df = pd.concat([df, dummies], axis=1)
 ```
+
+![image](https://github.com/user-attachments/assets/17cb2cd9-73b7-40f9-9cf8-3b6d0b5a028d)
+
+* select top 20 jobs have highest fraud cases ➡️ encode top 20 jobs with highest fraud cases and the rest as 'others'
+
+```
+ #select top 20 jobs have highest fraud cases
+fraud_counts = (df.groupby(['job'])['is_fraud'].sum()).sort_values(ascending=False)
+job_counts = df["job"].value_counts()
+df1 = pd.concat([fraud_counts,job_counts], axis=1)
+df1.columns = ['fraud_counts','job_counts']
+df1['fraud_rate']= (df1['fraud_counts']/df1['job_counts'])
+df1 = df1.reset_index()
+print(df1.head(20))
+```
+
+```
+# entitle top 20 jobs with highest fraud cases and the rest as 'others'
+top_categories  = [
+    "Materials engineer",
+    "Trading standards officer",
+    "Naval architect",
+    "Exhibition designer",
+    "Surveyor, land/geomatics",
+    "Mechanical engineer",
+    "Prison officer",
+    "Quantity surveyor",
+    "Audiological scientist",
+    "Copywriter, advertising",
+    "Senior tax professional/tax inspector",
+    "Film/video editor",
+    "Scientist, biomedical",
+    "Financial trader",
+    "Television production assistant",
+    "Buyer, industrial",
+    "Private music teacher",
+    "Podiatrist",
+    "Nurse, children's",
+    "Magazine features editor"
+]
+# Create a mapping
+category_mapping = {title: title for title in top_categories}
+category_mapping['others'] = 'others'
+
+# Apply the mapping
+df['encoded_job_title'] = df['job'].apply(lambda x: x if x in top_categories else 'others')
+
+print(df)
+```
+# get_dummies the 'encoded_job_title'
+encoded_df=pd.get_dummies(df['encoded_job_title'], prefix='job_title',drop_first=True,dtype=int)
+df = pd.concat([df, encoded_df], axis=1)
+
+print(df)
+```
+
 ## Model Traning
 ```
 # Select features and Split dataset
