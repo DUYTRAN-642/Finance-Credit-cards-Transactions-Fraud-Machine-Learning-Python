@@ -200,7 +200,6 @@ category_mapping['others'] = 'others'
 df['encoded_job_title'] = df['job'].apply(lambda x: x if x in top_categories else 'others')
 
 print(df)
-```
 # get_dummies the 'encoded_job_title'
 encoded_df=pd.get_dummies(df['encoded_job_title'], prefix='job_title',drop_first=True,dtype=int)
 df = pd.concat([df, encoded_df], axis=1)
