@@ -113,7 +113,7 @@ df.describe()
 
 => The dataset has 24 features, none of them have mising values, there are 3 different data types: Float, Interger and Object
 
-## 2️⃣ Feature Engineering
+### 2️⃣ Feature Engineering
 
 * Create new features by transforming to "trans_time"; "year_of_birth" to fit the format of running model
 
@@ -168,6 +168,8 @@ df1 = df1.reset_index()
 print(df1.head(20))
 ```
 
+![image](https://github.com/user-attachments/assets/935f82ab-8fa3-4173-ac17-19d9ca2ef159)
+
 ```
 # entitle top 20 jobs with highest fraud cases and the rest as 'others'
 top_categories  = [
@@ -207,7 +209,7 @@ df = pd.concat([df, encoded_df], axis=1)
 print(df)
 ```
 
-## Model Traning
+### 3️⃣ Model Traning
 ```
 # Select features and Split dataset
 drop_features = ['Unnamed: 0.1','Unnamed: 0','trans_date_trans_time','cc_num','merchant','first','last','street','city','state','job','region','dob','trans_num','encoded_job_title','is_fraud']
@@ -222,7 +224,7 @@ y_pred = model.predict(X_test)
 ```
 Random Forest is a smart choice for credit card fraud prediction because it balances robustness, flexibility, and performance, especially for imbalanced, noisy data, especially, Random Forest does not inherently require feature scaling (e.g., normalization or standardization)
 
-## Model Evaluation
+### 4️⃣ Model Evaluation
 ```
 [[27050    55]
  [  315  1905]]
@@ -234,6 +236,20 @@ An accuracy of 99% sounds excellent at first glance—it means the model is corr
 The F1 score is given as 0.91, which is the harmonic mean of precision and recall, confirming the metrics are consistent and indicates the model performs well on the positive class despite the imbalance
 
 ==> This model 's performance  is quite good overall, with a strong F1 score indicating robustness despite imbalance
+
+## 🔎 Final Conclusion & Recommendations
+
+👉🏻 Based on the insights and findings above, we could have conclusion to stakeholders fro decisiong-making
+
+   ✔️ The project successfully developed a machine learning model using RandomForest and demonstrated strong potential in identifying fraudulent transactions, capturing key patterns through the process of feature engineering, model training, and evaluation
+   ✔️ The project significantly provided an valuable tool for enhancing the detection system of credit card fraud, enable risk management team to handle large volumes of transactions in real-time.
+
+📌 Key Takeaways:
+  
+  ✔️ Continue refining features, such as transaction history or user behavior, and explore domain-specific features to better capture fraud patterns
+  ✔️ Further fine-tune the RandomForest model by experimenting with hyperparameters. 
+  ✔️ explore alternative models like XGBoost to assess if they offer better performance in fraud detection.
+
 
 # Reference sources
 
