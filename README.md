@@ -94,14 +94,14 @@ Tools Used: Python
 ### 1️⃣ Data Cleaning & Preprocessing
 * Loading Data
 
-```
+```python
   df = pd.read_csv('/content/drive/MyDrive/Colab Notebooks/Bản sao của mini-project2 .csv')
   df.head()
 ```
 
 * Data overview, Check missing values, outlier detection and EDA using syntax
 
-```
+```python
 df.info()
 df.describe()
 ```
@@ -117,7 +117,7 @@ df.describe()
 
 * Create new features by transforming to "trans_time"; "year_of_birth" to fit the format of running model
 
-```
+```python
 df["trans_time"] = pd.to_datetime(df['trans_date_trans_time']).dt.hour
 df["year_of_birth"] = pd.to_datetime(df['dob']).dt.year
 ```
@@ -126,14 +126,14 @@ df["year_of_birth"] = pd.to_datetime(df['dob']).dt.year
 
 * Endcode features "category" and "gender"
   
-```
+```python
   list_columns = ['category','gender']
 df = pd.get_dummies(df, columns=list_columns,drop_first=True,dtype=int)
 ```
 
 * Encode states in US by group them into 4 regions  ➡️ 'get_dummies' the regions 'Northeast', 'Midwest', 'South', 'West'
 
-```
+```python
 list_columns = ['category','gender']
 df = pd.get_dummies(df, columns=list_columns,drop_first=True,dtype=int)
 state_to_region = {
@@ -157,7 +157,7 @@ df = pd.concat([df, dummies], axis=1)
 
 * select top 20 jobs have highest fraud cases ➡️ encode top 20 jobs with highest fraud cases and the rest as 'others'
 
-```
+```python
  #select top 20 jobs have highest fraud cases
 fraud_counts = (df.groupby(['job'])['is_fraud'].sum()).sort_values(ascending=False)
 job_counts = df["job"].value_counts()
@@ -170,7 +170,7 @@ print(df1.head(20))
 
 ![image](https://github.com/user-attachments/assets/935f82ab-8fa3-4173-ac17-19d9ca2ef159)
 
-```
+```python
 # entitle top 20 jobs with highest fraud cases and the rest as 'others'
 top_categories  = [
     "Materials engineer",
@@ -210,7 +210,7 @@ print(df)
 ```
 
 ### 3️⃣ Model Traning
-```
+```python
 # Select features and Split dataset
 drop_features = ['Unnamed: 0.1','Unnamed: 0','trans_date_trans_time','cc_num','merchant','first','last','street','city','state','job','region','dob','trans_num','encoded_job_title','is_fraud']
 X = df.drop(columns = drop_features)
@@ -225,7 +225,7 @@ y_pred = model.predict(X_test)
 Random Forest is a smart choice for credit card fraud prediction because it balances robustness, flexibility, and performance, especially for imbalanced, noisy data, especially, Random Forest does not inherently require feature scaling (e.g., normalization or standardization)
 
 ### 4️⃣ Model Evaluation
-```
+```python
 [[27050    55]
  [  315  1905]]
 Accuracy: 0.99
