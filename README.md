@@ -11,11 +11,9 @@ Tools Used: Python
 
 ## 📑 Table of Contents
 
-[📌 Background & Overview] (#📌 Background & Overview)
-
-📂 Dataset Description & Data Structure
-
-🔎 Final Conclusion & Recommendations
+[📌 Background & Overview](#-background--overview)
+[📂 Dataset Description & Data Structure](#-dataset-description--data-structure)
+[🔎 Final Conclusion & Recommendations](#-final-conclusion--recommendations)
 
 ## 📌 Background & Overview
 
