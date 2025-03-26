@@ -11,7 +11,7 @@ Tools Used: Python
 
 ## 📑 Table of Contents
 
-📌 Background & Overview
+[📌 Background & Overview] (#📌 Background & Overview)
 
 📂 Dataset Description & Data Structure
 
